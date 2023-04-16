@@ -44,16 +44,16 @@ class BinarySearchTree {
   }
 
   has(data) {
-    return hasNode(this.tree, data);
+    return hasWithin(this.tree, data);
 
-    function hasNode (node, data) {
+    function hasWithin (node, data) {
       if(!node) {
         return false;
       }
       if (node.data === data) {
         return true;
       }
-      return data < node.data ? hasNode(node.left, data) : hasNode(node.right, data);
+      return data < node.data ? hasWithin(node.left, data) : hasWithin(node.right, data);
     }
   }
 
